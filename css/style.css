@@ -1,0 +1,228 @@
+@font-face {
+    font-family:'digital-font';
+    src: url('../assets/fonts/digital-7 (mono italic).ttf');
+}
+
+body * {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body, #calc, .output {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    width: 98vw;
+    height: 98vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4757e;
+}
+
+#calc {
+    height: 640px;
+    width: 480px;
+    max-width: 50%;
+    padding: 32px;
+    background: rgb(89,89,89);
+    background: linear-gradient(120deg, rgb(89,89,89) 0%, rgb(32,32,32) 100%);
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px 0px rgb(200, 200, 200) inset,
+                12px 12px 32px 0px rgba(51, 34, 34, 0.75);
+    z-index: 100;
+}
+
+.output {
+    justify-content: space-around;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    padding: 4px 16px;
+    background-color: #a2af77;
+    border-radius: 16px;
+    font-family: 'digital-font';
+    box-shadow: 6px 6px 16px 0px rgba(71, 81, 41, 1) inset;
+}
+
+.history, .result, .converted-value {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.history {
+    font-size: 2em;
+    height: 30px;
+    /* display: none; */
+}
+
+.result {
+    font-size : 4em;
+    height: 60px;
+    /* display: none; */
+}
+
+.ext-func {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 12px;
+}
+    
+.mods {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.func-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 8px;
+    font-size: 1.5em;
+    color: lightgray;
+}
+
+.converter {
+    /* display: flex; */
+    flex-flow: column nowrap;
+    width: 90%;
+    margin: 12px 0;
+    display: none;
+}
+
+.input-value {
+    background: transparent;
+    border: none;
+    height: 36px;
+    font-size: 2em;
+    font-family: 'digital-font';
+}
+
+.converted-value {
+    height: 36px;
+    font-size: 2em;
+}
+
+.dropdown {
+    background: transparent;
+    border: none;
+    padding: 4px 0;
+}
+
+#backspace {
+    height: 32px;
+}
+
+.converter-hr {
+    width: 100%;
+    margin: 2px 0;
+    border: none;
+    background-color: black;
+    height: 2px;
+}
+
+.ext-hr {
+    width: 100%;
+    margin: 12px 0;
+    border: none;
+    border-radius: 2px;
+    background-color: darkgray;
+    height: 4px;
+    box-shadow: 12px 12px 32px 0px rgba(51, 34, 34, 0.75);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    column-gap: 12px;
+    row-gap: 16px;
+    width: 100%;
+    height: 100%;
+    flex: 4;
+    font-size: 2.5em;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 4px;
+    color: white;
+    background-color: #5f5f5f;
+    border-radius: 16px;
+    box-shadow: 2px 2px 4px 0px rgb(235, 235, 235) inset,
+                4px 4px 8px 0px rgba(0, 0, 0, 0.5);
+    transition: 400ms;
+}
+
+#expand {
+    max-width: 50%;
+    padding: 4px 16px 16px 16px;
+    background: rgb(89,89,89);
+    background: linear-gradient(120deg, rgb(89,89,89) 0%, rgb(32,32,32) 100%);
+    border-radius: 0 0 16px 16px;
+    box-shadow: 2px 0px 2px 0px rgb(200, 200, 200) inset,
+                12px 12px 32px 0px rgba(51, 34, 34, 0.75);
+    font-size: 1.75em;
+    display: none;
+    /* display: block; */
+}
+
+.btns-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.btn-expand {
+    margin: 0 4px;
+    padding: 4px 8px;
+}
+
+.func-btn:hover {
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #3b3b3b;
+    color: lightgray;
+    cursor: pointer;
+}
+
+.equals {
+    background-color: #8b0000;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.equals:hover {
+    background-color: #6d0000;
+}
+
+.first-row {
+    background-color: #a9a9a9;
+}
+
+.first-row:hover {
+    background-color: #747474;
+}
+
+.simple-oper {
+    background-color: #ff8c00;
+}
+
+.simple-oper:hover {
+    background-color: #c86e00;
+}

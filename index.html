@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/functions.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/creative.js" defer></script>
+</head>
+
+<body onload="setHandlers()">
+    <div id="calc">
+        <div class="output">
+            <div class="history" id="history"></div>
+            <div class="result" id="input">0</div>
+            <div class="converter" id="converter">
+                <hr class="converter-hr">
+                <select class="dropdown" name="initial-unit" id="initial-unit">
+                    <optgroup label="Length">
+                        <option value="centimetres">Centimetres</option>
+                        <option value="meters">Metres</option>
+                        <option value="kilometres">Kilometres</option>
+                    </optgroup>
+                    <optgroup label="Mass">
+                        <option value="grams">Grams</option>
+                        <option value="kilograms">Kilograms</option>
+                        <option value="tonnes">Tonnes</option>
+                    </optgroup>
+                    <optgroup label="Area">
+                        <option value="sq-centimetres">Sqare centimetres</option>
+                        <option value="sq-metres">Sqare metres</option>
+                        <option value="sq-kilometres">Sqare kilometres</option>
+                        <option value="hectares">Hectares</option>
+                    </optgroup>
+                </select>
+                <input class="input-value" type="number" name="input-value" placeholder="0" dir="rtl" id="initial">
+                <hr class="converter-hr">
+                <select class="dropdown" name="convert-to-unit" id="convert-to-unit">
+                    <optgroup label="Length">
+                        <option value="centimetres">Centimetres</option>
+                        <option value="meters">Metres</option>
+                        <option value="kilometres">Kilometres</option>
+                    </optgroup>
+                    <optgroup label="Mass">
+                        <option value="grams">Grams</option>
+                        <option value="kilograms">Kilograms</option>
+                        <option value="tonnes">Tonnes</option>
+                    </optgroup>
+                    <optgroup label="Area">
+                        <option value="sq-centimetres">Sqare centimetres</option>
+                        <option value="sq-metres">Sqare metres</option>
+                        <option value="sq-kilometres">Sqare kilometres</option>
+                        <option value="hectares">Hectares</option>
+                    </optgroup>
+                </select>
+                <div class="converted-value" id="converted">0</div>
+                <hr class="converter-hr">
+            </div>
+        </div>
+        <div class="ext-func">
+            <div class="mods">
+                <div class="func-btn" onclick="openConverter()">Converter</div>
+                <div class="func-btn" onclick="expand()">Advanced</div>
+            </div>
+            <div class="func-btn">
+                <img src="assets/images/backspace.png" alt="backspace" id="backspace" onclick="inputDelete()">
+            </div>
+        </div>
+        <hr class="ext-hr">
+        <div class="buttons">
+            <div class="btn first-row" onclick="fieldClear()">C</div>
+            <div class="btn first-row" onclick="toggleSign()">±</div>
+            <div class="btn first-row">%</div>
+            <div class="btn simple-oper">÷</div>
+
+            <div class="btn">7</div>
+            <div class="btn">8</div>
+            <div class="btn">9</div>
+            <div class="btn simple-oper">×</div>
+
+            <div class="btn">4</div>
+            <div class="btn">5</div>
+            <div class="btn">6</div>
+            <div class="btn simple-oper">-</div>
+
+            <div class="btn">1</div>
+            <div class="btn">2</div>
+            <div class="btn">3</div>
+            <div class="btn simple-oper">+</div>
+
+            <div class="btn drop-left">.</div>
+            <div class="btn">0</div>
+            <div class="btn equals" onclick="result()">=</div>
+        </div>
+    </div>
+    <div id="expand">
+        <div class="btns-row">
+            <div class="btn btn-expand" onclick="append('!')">x!</div>
+            <div class="btn btn-expand" onclick="append('^')">
+                x<sup>n</sup>
+            </div>
+            <div class="btn btn-expand" onclick="append('√')">	
+                &#8730;x
+            </div>
+        </div>
+        
+        <div class="btns-row">
+            <div class="btn btn-expand" onclick="memoryRecall()">MR</div>
+            <div class="btn btn-expand" onclick="memoryClear()">MC</div>
+            <div class="btn btn-expand" onclick="memoryAdd()">M+</div>
+            <div class="btn btn-expand" onclick="memorySub()">M-</div>
+        </div>
+        
+        <div class="btns-row">
+            <div class="btn btn-expand" onclick="switchMode('binary')" id="binary">BIN</div>
+            <div class="btn btn-expand equals" onclick="switchMode('dec')" id="dec">DEC</div>
+            <div class="btn btn-expand" onclick="switchMode('hex')" id="hex">HEX</div>
+        </div>
+    </div>
+</body>
+
+</html>
